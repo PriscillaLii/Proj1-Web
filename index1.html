@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +10,11 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
     
         <!-- Bootstrap CSS -->
-        <!-- build:css css/main.css -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
         <link rel="stylesheet" href="css/styles.css">
-        <!-- endbuild -->
+        
     <title>Ristorante Con Fusion</title>
 
     <style>
@@ -41,54 +41,15 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <!--<a data-toggle="modal" data-target="#loginModal">
+                    <a data-toggle="modal" data-target="#loginModal">
                         <span class="fa fa-sign-in"></span> Login
-                    </a>-->
-                    <a id="loginButton"><span class="fa fa-sign-in"></span> Login</a>
+                    </a>
                 </span>
             </div>
         </div>
     </nav>
 
-    
     <div id="loginModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="content" id="loginContent">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" id="loginClose">
-                        &times;
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-sm-4">
-                                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="name@example.com">
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
-                            </div>
-                            <div class="col-sm-auto">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox">
-                                    <label class="form-check-label"> Remember me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-<!--    <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
@@ -124,14 +85,14 @@
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 
     <div id="reserveModal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg" role="content" >
+            <div class="modal-dialog modal-lg" role="content">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Reserve a Table</h4>
-                        <button type="button" class="close" data-dismiss="modal" id="reserveClose">
+                        <button type="button" class="close" data-dismiss="modal">
                             &times;
                         </button>
                     </div>
@@ -153,8 +114,15 @@
 
                             <div class="form-row" style="margin-top: 10px; margin-bottom: 20px;">
                                 <label for="section" class="col-sm-2">Section</label>
-                                <input type="button" name="section" value="Non-smoking" checked style="background-color: green">
-                                <input type="button" name="section" value="Smoking" style="background-color: red">
+                                <div class="btn-group btn-group-toggle col-md-7" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" name="non-Smoking" id="non-smoking" checked> Non-smoking
+                                    </label>
+                                    <label class="btn btn-danger">
+                                        <input type="radio" name="smoking" id="smoking"> Smoking
+                                    </label>
+                                </div>
+
                             </div>
 
                             <div class="form-row">
@@ -235,14 +203,13 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center" >
-                    <!--<a role="button" class="btn btn-block nav-link btn-warning"
+                    <a role="button" class="btn btn-block nav-link btn-warning"
                         data-toggle="tooltip" data-html="true" 
                         title="Or Call Us at<br><strong>+1 202(322)1234</strong>"
                         data-placement="bottom">
                         <span data-toggle="modal" data-target="#reserveModal">
                             Reserve Table</span>
-                    </a>-->
-                    <a role="button" class="btn btn-block nav-link btn-warning" id="reserveButton"> Reserve Table</a>
+                    </a>
                 </div>
             </div>
         </div>
@@ -290,14 +257,9 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-                    <button class="btn btn-danger btn-sm" id="carouselButton">
-                        <span class="fa fa-pause"></span>
-                    </button>
-                    </div>
                 </div>
             </div>
         </div>
-    <div class="container">
         <div class = "row row-content align-items-center">
             <div class="col-12 col-sm-4 col-md-3 order-sm-last">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -350,6 +312,8 @@
                 </div>
             </div>
         </div>
+
+        
     </div>
 
     <footer class="footer">
@@ -395,12 +359,14 @@
     </footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <!-- endbuild -->
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 
 </html>
